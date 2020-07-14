@@ -1,10 +1,21 @@
-import {INCREASE,DECREASE, CLEAR_CART} from "./actions";
+import {INCREASE,DECREASE, CLEAR_CART,REMOVE} from "./actions";
 
 function reducer(state, action) {
     if (action.type === CLEAR_CART) {
       return {...state, cart: [] };
     }
-    return state;
+    if (action.type === DECREASE) {
+      console.log('you decreased amount')
+    }
+    if (action.type === INCREASE) {
+      console.log('you INCREASEd amount')
+    }
+    if (action.type === REMOVE) {
+      return {...state, 
+      cart: state.cart.filter(item => item.id !== action.payload.id)
+      }
+    }
+     return state;
   }
 
   export default reducer
