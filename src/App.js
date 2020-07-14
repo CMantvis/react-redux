@@ -26,8 +26,8 @@ import {Provider} from "react-redux";
 //initial store
 const initialStore = {
   cart: cartItems,
-  total: 0,
-  amount: 5
+  total: 105,
+  amount: 10
 };
 
 const store = createStore(reducer, initialStore);
@@ -38,7 +38,7 @@ function App() {
   return (
     <Provider store={store}>
       <Navbar />
-      <CartContainer cart={cartItems} />
+      <CartContainer />
     </Provider>
   );
 }
